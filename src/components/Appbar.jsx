@@ -14,7 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import {Link} from 'react-router-dom';
 
-const pages = ['Products', 'Pricing', 'about'];
+const pages = ['quiz', 'login', 'about'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Appbar() {
