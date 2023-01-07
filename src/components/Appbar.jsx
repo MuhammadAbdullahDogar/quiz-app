@@ -90,7 +90,7 @@ function Appbar() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center"><Link style={{textDecoration:'none',color:'white'}} to={`/${page}`}>{page}</Link></Typography>
+                  <Typography textAlign="center"><Link style={{textDecoration:'none'}} to={`/${page}`}>{page}</Link></Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -121,7 +121,7 @@ function Appbar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-               <Link style={{textDecoration:'none'}} to={`/${page}`}>{page}</Link>
+               <Link style={{textDecoration:'none',color:'white'}} to={`/${page}`}>{page}</Link>
               </Button>
             ))}
           </Box>
