@@ -56,7 +56,7 @@ function Appbar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            QUIZ
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -112,7 +112,7 @@ function Appbar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            QUIZ
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -121,7 +121,7 @@ function Appbar() {
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
-               <Link style={{textDecoration:'none',color:'white'}} to={`/${page}`}>{page}</Link>
+               <Link style={{textDecoration:'none'}} to={`/${page}`}>{page}</Link>
               </Button>
             ))}
           </Box>
