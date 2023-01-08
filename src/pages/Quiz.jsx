@@ -22,11 +22,10 @@ const Quiz = ({ quiz }) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        if (value === 'best') {
+        if (value === quiz.correct_answer) {
             setHelperText('You got it!');
             setError(false);
-        } else if (value === 'worst') {
+        } else if (value !== quiz.correct_answer) {
             setHelperText('Sorry, wrong answer!');
             setError(true);
         } else {
@@ -47,9 +46,10 @@ const Quiz = ({ quiz }) => {
                                 value={value}
                                 onChange={handleRadioChange}
                             >
-                                <FormControlLabel value="best" control={<Radio />} label={ quiz.incorrect_answers[0] } />
-                                <FormControlLabel value="worst" control={<Radio />} label={ quiz.incorrect_answers[1] } />
-                                <FormControlLabel value="good" control={<Radio />} label={ quiz.incorrect_answers[2] } />
+                                <FormControlLabel value={ quiz.incorrect_answers[0] } control={<Radio />} label={ quiz.incorrect_answers[0] } />
+                                <FormControlLabel value={ quiz.incorrect_answers[1] } control={<Radio />} label={ quiz.incorrect_answers[1] } />
+                                <FormControlLabel value={ quiz.incorrect_answers[2] }  control={<Radio />} label={ quiz.incorrect_answers[2] } />
+                                <FormControlLabel value={ quiz.correct_answer}  control={<Radio />} label={ quiz.correct_answer } />
                             </RadioGroup>
                             <FormHelperText>{helperText}</FormHelperText>
                             <Button sx={{ mt: 1, mr: 1 }} type="submit" variant="outlined">
