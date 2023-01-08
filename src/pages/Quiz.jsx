@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
-const Quiz = () => {
+const Quiz = ({ quiz }) => {
     const [value, setValue] = React.useState('');
     const [error, setError] = React.useState(false);
     const [helperText, setHelperText] = React.useState('Choose wisely');
@@ -40,15 +40,16 @@ const Quiz = () => {
                 <Stack spacing={2}>
                     <form onSubmit={handleSubmit}>
                         <FormControl sx={{ m: 3 }} error={error} variant="standard">
-                            <FormLabel id="demo-error-radios">Pop quiz</FormLabel>
+                            <FormLabel>{quiz.question}</FormLabel>
                             <RadioGroup
                                 aria-labelledby="demo-error-radios"
                                 name="quiz"
                                 value={value}
                                 onChange={handleRadioChange}
                             >
-                                <FormControlLabel value="best" control={<Radio />} label="The best!" />
-                                <FormControlLabel value="worst" control={<Radio />} label="The worst." />
+                                <FormControlLabel value="best" control={<Radio />} label={ quiz.incorrect_answers[0] } />
+                                <FormControlLabel value="worst" control={<Radio />} label={ quiz.incorrect_answers[1] } />
+                                <FormControlLabel value="good" control={<Radio />} label={ quiz.incorrect_answers[2] } />
                             </RadioGroup>
                             <FormHelperText>{helperText}</FormHelperText>
                             <Button sx={{ mt: 1, mr: 1 }} type="submit" variant="outlined">

@@ -4,22 +4,30 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
+import FormControl from '@mui/material/FormControl';
+
 
 const Login = () => {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    };
     return (
         <>
-            <Container maxWidth="sm">
-                <Box >
-                    <Stack spacing={2}>
-                        <TextField id="standard-basic" label="Standard" variant="standard" />
-                        <TextField
-                            id="standard-password-input"
-                            label="Password"
-                            type="password"
-                            autoComplete="current-password"
-                            variant="standard"
-                        />
-                        <Button variant="contained">Login</Button>
+            <Container>
+                <Box mt={10}>
+                    <Stack spacing={2} justifyContent="center" alignItems="center">
+                        <form onSubmit={handleSubmit}>
+                            <FormControl variant="standard">
+                                <TextField label="Email" variant="standard" />
+                                <TextField
+                                    label="Password"
+                                    type="password"
+                                    autoComplete="current-password"
+                                    variant="standard"
+                                />
+                                <Button sx={{ mt: 1 }} type="submit" variant="contained">LOGIN</Button>
+                            </FormControl>
+                        </form>
                     </Stack>
                 </Box>
             </Container>
