@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Quiz from './Quiz'
+import Quiz from './StartQuiz'
 
 const QuizApi = () => {
     const [quizList, setQuizList] = useState([])
@@ -19,6 +19,10 @@ const QuizApi = () => {
                 quizList.map(quiz => (
                     <Quiz quiz={quiz} />
                 ))
+
+                // quizList.map(quiz => (
+                //     <Quiz quiz={quiz} />
+                // ))
             }
         </div>
     )

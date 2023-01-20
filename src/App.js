@@ -1,9 +1,10 @@
 import About from "./components/About";
 import Appbar from "./components/Appbar";
-import {Routes,Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Login from "./pages/Login";
 import Quiz from "./pages/Quiz";
 import QuizApi from "./pages/QuizApi";
+import Home from "./pages/Home";
 
 
 function App() {
@@ -12,10 +13,11 @@ function App() {
       <div className="App">
         <Appbar />
         <Routes>
+          <Route path="home" element={<Home />}></Route>
           <Route path="about" element={<About />}></Route>
-          <Route path="login" element={<Login/>}></Route>
-          <Route path="Quiz" element={<Quiz/>}></Route>
-          <Route path="quizapi" element={<QuizApi/>}></Route>
+          <Route path="login" element={<Login />}></Route>
+          <Route path="Quiz" element={<Quiz />}></Route>
+          <Route path="quizapi" element={<QuizApi />}></Route>
         </Routes>
       </div>
     </>

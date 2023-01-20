@@ -1,39 +1,78 @@
 import React from 'react'
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
+import { Button, Card, CardContent, TextField, Typography } from '@mui/material'
 import Box from '@mui/material/Box';
-import Container from '@mui/material/Container';
-import FormControl from '@mui/material/FormControl';
-
+import Center from '../components/Center';
+import UseForm from '../../src/hooks/useForm';
+const getFreshModel = () => ({
+    password: '',
+    email: ''
+})
 
 const Login = () => {
-    const handleSubmit = (event) => {
-        event.preventDefault();
-    };
+  
+    const {
+        values,
+        errors,
+        setErrors,
+        handleInputChange
+    } = UseForm(getFreshModel);
+
+
+
+    const login = e => {
+        e.preventDefault();
+        console.log(values);
+          if (validate()){
+            console.log("valide");
+          }
+    }
+
+    const validate = () => {
+        let temp = {}
+        temp.email = (/\S+@\S+\.\S+/).test(values.email) ? "" : "Email is not valid."
+        temp.password = values.password !== "" ? "" : "This field is required."
+        setErrors(temp)
+        return Object.values(temp).every(x => x === "")
+    }
     return (
-        <>
-            <Container>
-                <Box mt={10}>
-                    <Stack spacing={2} justifyContent="center" alignItems="center">
-                        <form onSubmit={handleSubmit}>
-                            <FormControl variant="standard">
-                                <TextField label="Email" variant="standard" />
-                                <TextField
-                                    label="Password"
-                                    type="password"
-                                    autoComplete="current-password"
-                                    variant="standard"
-                                />
-                                <Button sx={{ mt: 1 }} type="submit" variant="contained">LOGIN</Button>
-                            </FormControl>
+        <Center>
+            <Card sx={{ width: 400 }}>
+                <CardContent sx={{ textAlign: 'center' }}>
+                    <Typography variant="h3" sx={{ my: 3 }}>
+                        Quiz App
+                    </Typography>
+                    <Box sx={{
+                        '& .MuiTextField-root': {
+                            m: 1,
+                            width: '90%'
+                        }
+                    }}>
+                        <form noValidate autoComplete="off" onSubmit={login}>
+                            <TextField
+                                label="Email"
+                                name="email"
+                                value={values.email}
+                                onChange={handleInputChange}
+                                variant="outlined"
+                                {...(errors.email && { error: true, helperText: errors.email })} />
+                            <TextField
+                                label="Password"
+                                type="password"
+                                name="password"
+                                value={values.password}
+                                onChange={handleInputChange}
+                                variant="outlined"
+                                {...(errors.password && { error: true, helperText: errors.password })} />
+                            <Button
+                                type="submit"
+                                variant="contained"
+                                size="large"
+                                sx={{ width: '90%' }}>Start</Button>
                         </form>
-                    </Stack>
-                </Box>
-            </Container>
-
-
-        </>
+                    </Box>
+                </CardContent>
+            </Card>
+        </Center>
     )
 }
 
