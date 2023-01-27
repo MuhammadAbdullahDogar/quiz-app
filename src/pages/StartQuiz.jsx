@@ -6,18 +6,24 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormLabel from '@mui/material/FormLabel';
+import { getFormatedTime } from '../helper';
 
 const StartQuiz = ({ quiz }) => {
     const [value, setValue] = React.useState('');
     const [qnIndex, setQnIndex] = useState(0)
     const [timeTaken, setTimeTaken] = useState(0)
-    // let timer;
+    let timer;
 
-    // const startTimer = () => {
-    //     timer = setInterval(() => {
-    //         setTimeTaken(prev => prev + 1)
-    //     }, [1000])
-    // }
+    const startTimer = () => {
+        timer = setInterval(() => {
+            setTimeTaken(prev => prev + 1)
+        }, [1000])
+    }
+    const handleRadioChange = (event) => {
+        setValue(event.target.value);
+        startTimer();
+
+    };
     return (
         <Card
             sx={{
@@ -25,21 +31,21 @@ const StartQuiz = ({ quiz }) => {
                 '& .MuiCardHeader-action': { m: 0, alignSelf: 'center' }
             }}>
             <CardHeader
-            // title={'Question ' + (qnIndex + 1) + ' of 5'}
-            // action={<Typography>{getFormatedTime(timeTaken)}</Typography>} 
+                title={'Question ' + (qnIndex + 1) + ' of 10'}
+                action={<Typography>{getFormatedTime(timeTaken)}</Typography>}
             />
             <Box>
-                {/* <LinearProgress variant="determinate" value={(qnIndex + 1) * 100 / 5} /> */}
+                <LinearProgress variant="determinate" value={(qnIndex + 1) * 100 / 5} />
             </Box>
             <CardContent>
                 <Typography variant="h6">
                     {quiz.question}
                 </Typography>
                 <List>
-                    <FormLabel>{quiz.question}</FormLabel>
                     <RadioGroup
                         name="quiz"
                         value={value}
+                        onChange={handleRadioChange}
                     >
                         <FormControlLabel value={quiz.incorrect_answers[0]} control={<Radio />} label={quiz.incorrect_answers[0]} />
                         <FormControlLabel value={quiz.incorrect_answers[1]} control={<Radio />} label={quiz.incorrect_answers[1]} />

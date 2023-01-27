@@ -48,8 +48,8 @@ const Quiz = ({ quiz }) => {
                             >
                                 <FormControlLabel value={ quiz.incorrect_answers[0] } control={<Radio />} label={ quiz.incorrect_answers[0] } />
                                 <FormControlLabel value={ quiz.incorrect_answers[1] } control={<Radio />} label={ quiz.incorrect_answers[1] } />
-                                <FormControlLabel value={ quiz.incorrect_answers[2] }  control={<Radio />} label={ quiz.incorrect_answers[2] } />
                                 <FormControlLabel value={ quiz.correct_answer}  control={<Radio />} label={ quiz.correct_answer } />
+                                <FormControlLabel value={ quiz.incorrect_answers[2] }  control={<Radio />} label={ quiz.incorrect_answers[2] } />
                             </RadioGroup>
                             <FormHelperText>{helperText}</FormHelperText>
                             <Button sx={{ mt: 1, mr: 1 }} type="submit" variant="outlined">
