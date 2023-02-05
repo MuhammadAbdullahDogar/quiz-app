@@ -1,27 +1,31 @@
-import React, { useState, useEffect } from 'react'
-import { useParams } from "react-router-dom"
-// import Quiz from './Quiz'
-import Quiz from './StartQuiz'
+
+
+import Quiz from './StartQuiz';
+import React, { useEffect, useState } from 'react';
+import { useParams } from "react-router-dom";
+
 const QuizApi = () => {
-    const [quizList, setQuizList] = useState([])
-    const {type} = useParams()
+    const { type } = useParams()
+    const [questions, setQustions] = useState()
+    const [score, setScore] = useState(0);
 
     useEffect(() => {
-        fetch(`https://opentdb.com/api.php?amount=10&category=${type}&difficulty=easy&type=multiple`)
-            .then(res => res.json())
-            .then(data => setQuizList(data.results))
-    }, [type])
+        handleFetchData();
 
-    console.log(quizList);
+    }, [])
+
+    const handleFetchData = async () => {
+        const response = await fetch(`https://opentdb.com/api.php?amount=10&category=${type}&difficulty=easy&type=multiple`);
+        const data = await response.json();
+        setQustions(data.results);
+    };
+
     return (
-        <div>
-            {
-
-                quizList.map(quiz => (
-                    <Quiz quiz={quiz} />
-                ))
-            }
-        </div>
+        <Quiz
+            questions={questions}
+            score={score}
+            setScore={setScore}
+        />
     )
 }
 

@@ -1,12 +1,9 @@
 import React from 'react'
-import { Button, Card, CardContent, TextField, Typography } from '@mui/material'
-import Box from '@mui/material/Box';
+import { Button, Card, CardContent, TextField, Typography,Box } from '@mui/material'
 import Center from '../components/Center';
+import { Link } from "react-router-dom"
 
 const SignUp = () => {
-    const signup = e => {
-        e.preventDefault();
-    }
     return (
         <Center>
             <Card sx={{ width: 400 }}>
@@ -20,7 +17,7 @@ const SignUp = () => {
                             width: '90%'
                         }
                     }}>
-                        <form noValidate autoComplete="off" onSubmit={signup}>
+                        <form >
                             <TextField
                                 label="Name"
                                 name="name"
@@ -37,11 +34,12 @@ const SignUp = () => {
                                 name="password"
                                 variant="outlined"
                             />
-                            <Button
+                             <Link to="/login" style={{ textDecoration: "none" }}><Button
                                 type="submit"
                                 variant="contained"
                                 size="large"
-                                sx={{ width: '90%' }}>SignUp</Button>
+                                sx={{ width: '90%' }}>SignUp</Button></Link>
+                            
                         </form>
                     </Box>
                 </CardContent>
