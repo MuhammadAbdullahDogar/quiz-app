@@ -24,7 +24,7 @@ const Result = () => {
                         <Typography variant="h6" sx={{ my: 3 }}>
                             {score} Points
                         </Typography>
-                        <Link to="/home" style={{ textDecoration: "none" }}>
+                        <Link to="/" style={{ textDecoration: "none" }}>
                             <Button
                                 type="submit"
                                 variant="contained"

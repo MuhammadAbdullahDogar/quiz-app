@@ -30,7 +30,7 @@ const Login = () => {
                                     name="password"
                                     variant="outlined"
                                 />
-                                <Link to="/home" style={{ textDecoration: "none" }}><Button
+                                <Link to="/" style={{ textDecoration: "none" }}><Button
                                     type="submit"
                                     variant="contained"
                                     size="large"
