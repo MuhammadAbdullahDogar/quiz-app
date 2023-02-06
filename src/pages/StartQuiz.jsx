@@ -35,9 +35,8 @@ const StartQuiz = ({ questions, score, setScore, }) => {
                     : (
                         <Center>
                             <CircularProgress
-                                color="inherit"
-                                size={150}
-                                thickness={1} />
+                                size={100}
+                                thickness={2} />
                         </Center>
 
                     )

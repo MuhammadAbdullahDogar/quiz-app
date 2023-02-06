@@ -1,12 +1,22 @@
 import React from 'react'
+import { makeStyles } from "@mui/styles"
 import { Box, Button, Card, CardContent, TextField, Typography } from '@mui/material'
 import Center from '../components/Center';
 import { Link } from "react-router-dom"
+const useStyles = makeStyles((theme) => ({
+    root: {
+        minHeight: '100vh',
+        backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/island3.jpg'})`,
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'cover',
+    },
+}));
 
 const Login = () => {
+    const classes = useStyles();
     return (
-        <>
-            <Center>
+        <div className={classes.root}>
+            <Center >
                 <Card sx={{ width: 400 }}>
                     <CardContent sx={{ textAlign: 'center' }}>
                         <Typography variant="h3" sx={{ my: 3 }}>
@@ -41,7 +51,7 @@ const Login = () => {
                     </CardContent>
                 </Card>
             </Center>
-        </>
+        </div>
     )
 }
 
