@@ -1,53 +1,99 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import { Typography, Paper, Grid, Box } from '@mui/material'
+import { Typography, Grid, Box, Card, CardContent, } from '@mui/material'
 
 const Home = () => {
-    const myBox = {
-        backgroundColor: '#444', color: '#fff'
-        , borderRadius: '5px', padding: '20px'
-        , fontSize: '150%',
-        marginTop: '2rem',
-   
 
-
-    };
     return (
         <>
             <Box sx={{ width: '100%' }}>
-                <Grid container rowSpacing={2}>
-                    <Grid item xs={12}></Grid>
+                <Grid container rowSpacing={2} spacing={2} mt={5}>
+                    
                     <Grid item xs={1.5} ></Grid>
-                    <Grid item xs={3} style={myBox}>
+                    <Grid item xs={12} sm={6} md={3} >
                         <Link to="/quizapi/18" style={{ textDecoration: "none", color: '#fff' }} >
-                            <Typography variant="h5">Computer Science</Typography>
+                            <Card sx={{ width: 300 }}>
+                                <CardContent sx={{ textAlign: 'center' }}>
+                                    <Typography variant="h4" sx={{ my: 3 }}>
+                                        Easy
+                                    </Typography>
+                                    <Box>
+                                        <Typography variant="h5">Computer Science</Typography>
+                                    </Box>
+                                </CardContent>
+                            </Card>
                         </Link>
                     </Grid>
-                    <Grid item xs={3} style={myBox}>
+                    <Grid item xs={12} sm={6} md={3} >
                         <Link to="/quizapi/9" style={{ textDecoration: "none", color: '#fff' }}>
-                            <Typography variant="h5">General Knowledge</Typography>
+                            <Card sx={{ width: 300 }}>
+                                <CardContent sx={{ textAlign: 'center' }}>
+                                    <Typography variant="h4" sx={{ my: 3 }}>
+                                        Easy
+                                    </Typography>
+                                    <Box >
+                                        <Typography variant="h5">General Knowledge</Typography>
+                                    </Box>
+                                </CardContent>
+                            </Card>
                         </Link>
                     </Grid>
-                    <Grid item xs={3} style={myBox}>
+                    <Grid item xs={12} sm={6} md={3} >
                         <Link to="/quizapi/23" style={{ textDecoration: "none", color: '#fff' }}>
-                            <Typography variant="h5">History</Typography>
+                            <Card sx={{ width: 300 }}>
+                                <CardContent sx={{ textAlign: 'center' }}>
+                                    <Typography variant="h4" sx={{ my: 3 }}>
+                                        Easy
+                                    </Typography>
+                                    <Box >
+                                        <Typography variant="h5">History</Typography>
+                                    </Box>
+                                </CardContent>
+                            </Card>
                         </Link>
                     </Grid>
                     <Grid item xs={1.5}></Grid>
                     <Grid item xs={1.5}></Grid>
-                    <Grid item xs={3} style={myBox}>
+                    <Grid item xs={12} sm={6} md={3} >
                         <Link to="/quizapi/19" style={{ textDecoration: "none", color: '#fff' }}>
-                            <Typography variant="h5">Math</Typography>
+                            <Card sx={{ width: 300 }}>
+                                <CardContent sx={{ textAlign: 'center' }}>
+                                    <Typography variant="h4" sx={{ my: 3 }}>
+                                        Easy
+                                    </Typography>
+                                    <Box >
+                                        <Typography variant="h5">Math</Typography>
+                                    </Box>
+                                </CardContent>
+                            </Card>
                         </Link>
                     </Grid>
-                    <Grid item xs={3} style={myBox}>
+                    <Grid item xs={12} sm={6} md={3} >
                         <Link to="/quizapi/21" style={{ textDecoration: "none", color: '#fff' }}>
-                            <Typography variant="h5">sports</Typography>
+                            <Card sx={{ width: 300 }}>
+                                <CardContent sx={{ textAlign: 'center' }}>
+                                    <Typography variant="h4" sx={{ my: 3 }}>
+                                        Easy
+                                    </Typography>
+                                    <Box >
+                                        <Typography variant="h5">Sports</Typography>
+                                    </Box>
+                                </CardContent>
+                            </Card>
                         </Link>
                     </Grid>
-                    <Grid item xs={3} style={myBox}>
+                    <Grid item xs={12} sm={6} md={3} >
                         <Link to="/quizapi/24" style={{ textDecoration: "none", color: '#fff' }}>
-                            <Typography variant="h5">Politics</Typography>
+                            <Card sx={{ width: 300 }}>
+                                <CardContent sx={{ textAlign: 'center' }}>
+                                    <Typography variant="h4" sx={{ my: 3 }}>
+                                        Easy
+                                    </Typography>
+                                    <Box >
+                                        <Typography variant="h5">Politics</Typography>
+                                    </Box>
+                                </CardContent>
+                            </Card>
                         </Link>
                     </Grid>
                     <Grid item xs={1.5}></Grid>

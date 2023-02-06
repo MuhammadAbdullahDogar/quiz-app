@@ -1,4 +1,3 @@
-import About from "./components/About";
 import Appbar from "./components/Appbar";
 import { Routes, Route } from 'react-router-dom';
 import Login from "./pages/Login";
@@ -17,7 +16,6 @@ function App() {
         <Appbar />
         <Routes>
           <Route path="home" element={<Home />}></Route>
-          <Route path="about" element={<About />}></Route>
           <Route path="login" element={<Login />}></Route>
           <Route path="signup" element={<SignUp />}></Route>
           <Route path="quizapi/:type" element={<QuizApi />}></Route>
