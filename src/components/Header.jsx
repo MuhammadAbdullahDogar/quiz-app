@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'Nunito',
     },
     colorText: {
-        color: '#5AFF3D',
+        color: '#fff',
     },
     colorWhite: {
         color: '#fff',
@@ -42,11 +42,11 @@ function Header() {
                 <div className={classes.container}>
                     <h1 className={classes.title}>
                         Welcome to <br />
-                        IT<span className={classes.colorText}>Quiz.</span>
+                        <span className={classes.colorText}>Quizify.</span>
                     </h1>
                     <Link to="/home" >
                         <h1 className={classes.colorText}>
-                            Start<span className={classes.colorWhite}>Quiz</span>
+                            <span className={classes.colorWhite}>Start Quiz</span>
                         </h1>
                     </Link>
                 </div>

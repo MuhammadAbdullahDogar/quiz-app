@@ -3,7 +3,7 @@ import Header from "../components/Header";
 const useStyles = makeStyles((theme) => ({
     root: {
         minHeight: '100vh',
-        backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/bg.jpg'})`,
+        backgroundImage: `url(${process.env.PUBLIC_URL + '/assets/background.jpg'})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
     },

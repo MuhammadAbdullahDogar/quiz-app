@@ -1,6 +1,5 @@
 
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
+import { Toolbar, AppBar, Button } from '@mui/material';
 import { makeStyles } from "@mui/styles"
 import { useNavigate } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
@@ -24,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
   colorText: {
     color: '#fff',
-    cursor:'pointer'
+    cursor: 'pointer'
   },
   colorWhite: {
     color: '#fff',
@@ -36,13 +35,11 @@ function Appbar() {
   return (
     <AppBar sx={{ background: 'none' }} elevation={0}>
       <Toolbar className={classes.appbarWrapper}>
-        <h1 className={classes.appbarTitle}onClick={()=>{ navigate('/');}}>
-          My<span className={classes.colorText}>Quiz.</span>
-        </h1>
-
-        <h1 className={classes.colorText} onClick={()=>{ navigate('/login');}}>
-          Log<span className={classes.colorWhite}>In</span>
-        </h1>
+        <h2 className={classes.appbarTitle} onClick={() => { navigate('/'); }}>
+          <span className={classes.colorText}>Quizify</span>
+        </h2>
+        <Button className={classes.colorText} color="inherit" onClick={() => { navigate('/login'); }}>Login</Button>
+        <Button className={classes.colorText} color="inherit" onClick={() => { navigate('/signup'); }}>SignUP</Button>
       </Toolbar>
     </AppBar>
   );
